@@ -1,7 +1,9 @@
-<gds-theme *nggCoreElement>
-    <gds-button *nggCoreElement>Click me!</gds-button>
-    <gds-input *nggCoreElement><gds-icon-people-profile slot="lead"></gds-icon-people-profile></gds-input>
-    <gds-link *nggCoreElement>Link text</gds-link>
-
-    <gds-fab>See what's new! <gds-signal slot="trail"></gds-signal></gds-fab>
-</gds-theme>
+<gds-flex *nggCoreElement height="100vh" align-items="center" flex-direction="column">
+    <gds-flex align-items="center" justify-content="space-between" gap="m m" width="100%" max-width="750px" margin-top="auto" justify-self="end">
+        <gds-input aria-placeholder="'Ask SEB AI'" placeholder="Ask SEB AI" (keyup)="onKey($event)" #promptInput>
+            @if(hasPrompt) {
+                <gds-icon-robot slot="trail" class="cursor-pointer"></gds-icon-robot>
+            }
+        </gds-input>
+    </gds-flex>
+</gds-flex>
